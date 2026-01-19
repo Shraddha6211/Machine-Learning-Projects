@@ -1,0 +1,1 @@
+error_rate = append(np.mean(pred != y_test))

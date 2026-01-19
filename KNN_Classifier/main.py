@@ -24,3 +24,29 @@ knn.fit(X_train, y_train)
 # Make Predictions & Check Accuracy
 y_pred = knn.predict(X_test)
 print("Accuracy:", accuracy_score(y_test, y_pred))
+
+# Find the best K by plotting error rate
+neighbors= range(1, 21)
+train_accuracies = {}
+test_accuracies = {}
+
+for neighbor in neighbors:
+    knn = KNeighborsClassifier(n_neighbors=neighbor)
+    knn.fit(X_train, y_train)
+    train_accuracies[neighbor] = knn.score(X_train, y_train)
+    test_accuracies[neighbor] = knn.score(X_test, y_test)
+    
+# Visualizing model complexity
+plt.title("KNN: Varying Number of Neighbors")
+
+# Plot training accuracies
+plt.plot(neighbors, list(train_accuracies.values()), label="Training Accuracy")
+# Plot testing accuracies
+plt.plot(neighbors, list(test_accuracies.values()), label="Testing Accuracy")
+
+plt.legend()
+
+plt.xlabel("Number of Neighbors")
+plt.ylabel("Accuracy")
+
+plt.show()
