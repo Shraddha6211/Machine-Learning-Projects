@@ -35,7 +35,7 @@ lr.fit(X_train.values, y_train.values)
 print(lr.predict(X_test.iloc[1].values.reshape(1,1)))
 # print(y_test)
 
-# Regression line
+# Best Fit Regression line
 plt.scatter(df['cgpa'],df['package'])
 plt.plot(X_test, lr.predict(X_test), color ='red')
 plt.xlabel('CGPA')
