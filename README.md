@@ -63,6 +63,9 @@ I believe the best way to learn ML is by **building**, not just watching tutoria
 ├── datasets/            # Practice datasets
 └── README.md
 
+```
+---
+
 ## 🧪 Mini Projects (Work in Progress)
 
 - 📊 **House Price Prediction**  
